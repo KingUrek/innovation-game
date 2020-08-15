@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const apiRoutes = require('./routes/api');
 const userRoutes = require('./routes/user');
+const cors = require('cors');
 const { errorHandler } = require('./middlewares/errorHandler');
 
 const app = express();
@@ -11,8 +12,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.SERVER_PORT || 3000;
 
 app.use('/api', apiRoutes);
 app.use('/user', userRoutes);
