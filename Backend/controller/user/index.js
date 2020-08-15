@@ -4,12 +4,25 @@ const serviceToken = require('../../services/token');
 exports.createUser = async (req, res, next) => {
   try {
     const { body } = req
-    const { name, email, password } = body;
-    await User.createOneUser({ name, email, password });
-    const payload = { email, name }
-    const token = serviceToken.generateToken(payload)
-    res.status(201).json({ data: { user: { email, name }, token }, success: true });
+    const userData = await User.createOneUser(body);
+    const { _id, email, name } = userData.ops[0];
+    const payload = { id: _id, email, name };
+    const token = serviceToken.generateToken(payload);
+    res.status(201).json({ data: { user: { id: _id, email, name }, token }, success: true });
   } catch (err) {
     next(err);
   }
 };
+
+exports.loginUser = async (req, res, next) => {
+  try {
+    const { body } = req
+    const userData = await User.findOne(body);
+    const { _id, email, name } = userData;
+    const payload = { id: _id, email, name };
+    const token = serviceToken.generateToken(payload);
+    res.status(200).json({ data: { user: { id: _id, email, name }, token }, success: true });
+  } catch (err) {
+    next(err);
+  }
+}

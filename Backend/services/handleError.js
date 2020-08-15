@@ -18,6 +18,11 @@ const objErrorHandler = {
     name: 'InvalidToken',
     detail: 'Token não é valido',
     status: 401,
+  },
+  invalidUser: {
+    name: 'invalidUser',
+    detail: 'Dados incorretos',
+    status: 400,
   }
 }
 
