@@ -1,4 +1,4 @@
-const serviceToken = require('../service/token');
+const serviceToken = require('../services/token');
 const { ERROR_INVALID_TOKEN } = require('../services/enum/errors');
 
 const validateToken = async (req, res, next) => {

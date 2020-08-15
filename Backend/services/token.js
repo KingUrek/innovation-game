@@ -17,8 +17,8 @@ exports.getPayload = (token) => {
 }
 
 exports.formatPayload = (payload) => {
-  const { name, email } = payload
-  if (!name || !email) {
+  const { name, email, _id } = payload
+  if (!name || !email, !_id) {
     const newError = new Error();
     newError.name = ERROR_INVALID_TOKEN;
     throw newError;

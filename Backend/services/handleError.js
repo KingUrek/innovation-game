@@ -1,4 +1,4 @@
-const { ERROR_INVALID_TOKEN, ERROR_NOT_FOUND } = require("./enum/errors");
+const { ERROR_INVALID_TOKEN, ERROR_NOT_FOUND, ERROR_INVALID_USER } = require("./enum/errors");
 
 const objErrorHandler = {
   invalidField: {

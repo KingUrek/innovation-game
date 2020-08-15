@@ -18,3 +18,21 @@ exports.findOne = async (data) => {
   }
   return value
 }
+
+exports.addSubscribe = async (data) => {
+  const db = await connection();
+  const { email, combo, address } = data;
+  const value = await db.collection('Users').findOneAndUpdate({
+    email: email,
+  },
+    {
+      $set: {
+        subscribe: {
+          combo,
+          address,
+        },
+      },
+    },
+  );
+  return value
+}
