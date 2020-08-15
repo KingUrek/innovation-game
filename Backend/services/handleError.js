@@ -1,11 +1,9 @@
 const objErrorHandler = {
   invalidField: {
     name: 'invalidField',
-    detail: 'Algum campo inválido',
+    detail: 'Campo inválido',
     status: 400,
   }
-
-
 
   // SequelizeUniqueConstraintError: {
   //   name: 'ValidateError',
@@ -45,6 +43,7 @@ const objErrorHandler = {
 }
 
 const objectErrorHandler = (error) => {
+  console.log(error)
   if (!objErrorHandler[error.name]) {
     error.details = 'Algo deu errado!';
     error.statusResponse = 500;

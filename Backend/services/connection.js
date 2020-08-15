@@ -2,11 +2,11 @@ const mongoClient = require('mongodb').MongoClient;
 
 const connection = () => (
   mongoClient
-    .connect(process.env.MONGO_DB_URL, {
+    .connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(conn => conn.db(process.env.MONGO_DB_NAME))
+    .then(conn => conn.db(process.env.DB_NAME))
     .catch((err) => {
       console.error(err);
       process.exit(1);
