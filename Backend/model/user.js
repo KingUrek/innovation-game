@@ -1,4 +1,5 @@
 const connection = require('../services/connection');
+const { ERROR_INVALID_USER } = require('../services/enum/errors');
 
 exports.createOneUser = async (data) => {
   const db = await connection();
@@ -12,7 +13,7 @@ exports.findOne = async (data) => {
   const value = await db.collection('Users').findOne({ email: email, password: password });
   if (!value) {
     const newError = new Error()
-    newError.name = 'invalidUser';
+    newError.name = ERROR_INVALID_USER;
     throw newError;
   }
   return value

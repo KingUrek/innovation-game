@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { ERROR_INVALID_TOKEN } = require('./enum/errors');
 require('dotenv').config();
 const secret = process.env.JWT;
 
@@ -17,5 +18,9 @@ exports.getPayload = (token) => {
 
 exports.formatPayload = (payload) => {
   const { name, email } = payload
-  if (!name || !email) throw new Error('InvalidToken')
+  if (!name || !email) {
+    const newError = new Error();
+    newError.name = ERROR_INVALID_TOKEN;
+    throw newError;
+  }
 }

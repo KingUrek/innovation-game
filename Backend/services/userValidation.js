@@ -1,3 +1,5 @@
+const { TYPE_VALIDATE_LOGIN, TYPE_VALIDATE_CREATE_USER } = require("./enum/validate");
+
 const objValidateFields = {
   name: {
     exist: true,
@@ -13,9 +15,18 @@ const objValidateFields = {
   },
 }
 
-exports.verifyFields = (fields) => {
-  const arrayOfFields = Object.keys(fields);
-  arrayOfFields.forEach((field) => validateField({ field, valueField: fields[field] }))
+const validateLogin = ['email', 'password'];
+const validateUser = ['email', 'password', 'name'];
+
+const invalidFieldError = () => {
+  const newError = new Error();
+  newError.name = 'invalidField';
+  throw newError;
+}
+
+exports.verifyFields = (fields, type) => {
+  if (type === TYPE_VALIDATE_LOGIN) validateLogin.forEach((field) => validateField({ field, valueField: fields[field] }));
+  if (type === TYPE_VALIDATE_CREATE_USER) validateUser.forEach((field) => validateField({ field, valueField: fields[field] }));
 }
 
 const validateField = ({ field, valueField }) => {
@@ -28,15 +39,15 @@ const validateField = ({ field, valueField }) => {
 const validadeSize = (size, value) => {
   if (!size) return;
   const { min, max } = size;
-  if (value.length < min || value.length > max) throw new Error('invalidField');
+  if (value.length < min || value.length > max) invalidFieldError();
 }
 
 const validateIsExist = (exist, value) => {
   if (!exist) return;
-  if (!value) throw new Error('invalidField');
+  if (!value) invalidFieldError();
 }
 
 const validateRegex = (regex, value) => {
-  if (regex) return
-  if (!re.test(String(value).toLowerCase())) throw new Error('invalidField');
+  if (!regex) return
+  if (!regex.test(String(value).toLowerCase())) invalidFieldError();
 }
