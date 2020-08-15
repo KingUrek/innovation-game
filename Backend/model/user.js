@@ -1,10 +1,7 @@
 const connection = require('../services/connection');
 
-exports.createOneUser = async ({ data }) => {
-  try {
+exports.createOneUser = async (data) => {
     const db = await connection();
-    return await db.collection('Users').insertOne(data);
-  } catch (err) {
-    throw err;
-  }
+    const value = await db.collection('Users').insertOne(data);
+    return value
 };

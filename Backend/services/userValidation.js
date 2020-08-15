@@ -1,5 +1,3 @@
-const { handleError } = require('./handleError');
-
 const objValidateFields = {
   name: {
     exist: true,
@@ -30,15 +28,15 @@ const validateField = ({ field, valueField }) => {
 const validadeSize = (size, value) => {
   if (!size) return;
   const { min, max } = size;
-  if (value.length < min || value.length > max) handleError('invalidField');
+  if (value.length < min || value.length > max) throw new Error('invalidField');
 }
 
 const validateIsExist = (exist, value) => {
   if (!exist) return;
-  if (!value) handleError('invalidField');
+  if (!value) throw new Error('invalidField');
 }
 
 const validateRegex = (regex, value) => {
   if (regex) return
-  if (!re.test(String(value).toLowerCase())) handleError('invalidField');
+  if (!re.test(String(value).toLowerCase())) throw new Error('invalidField');
 }

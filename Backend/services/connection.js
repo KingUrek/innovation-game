@@ -1,5 +1,5 @@
 const mongoClient = require('mongodb').MongoClient;
-
+require('dotenv').config();
 const connection = () => (
   mongoClient
     .connect(process.env.MONGO_URI, {

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+require('dotenv').config();
 const secret = process.env.JWT;
 
 exports.generateToken = (payload) => {
@@ -13,4 +13,9 @@ exports.generateToken = (payload) => {
 
 exports.getPayload = (token) => {
   return jwt.verify(token, secret);
+}
+
+exports.formatPayload = (payload) => {
+  const { name, email } = payload
+  if (!name || !email) throw new Error('InvalidToken')
 }
