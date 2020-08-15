@@ -3,7 +3,7 @@ const serviceToken = require('../../services/token');
 
 exports.createUser = async (req, res, next) => {
   try {
-    const { body } = req
+    const { body } = req;
     const userData = await User.createOneUser(body);
     const { _id, email, name } = userData.ops[0];
     const payload = { id: _id, email, name };
