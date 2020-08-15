@@ -1,6 +1,4 @@
 const connection = require('../services/connection');
-// const { ObjectID } = require('mongodb');
-
 
 exports.createOneUser = async ({ data }) => {
   try {
