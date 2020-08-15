@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SecureRouter from './components/generics/SecureRouter';
+import { Route } from 'react-router-dom';
+import routes from './routes';
+import NerdPage from './components/pages/nerd';
 
 function App() {
   return (
-
-    <SecureRouter path="path" />
+    <Route path={routes.nerd}>
+      <NerdPage />
+    </Route>
 
   );
 }
