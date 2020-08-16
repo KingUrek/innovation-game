@@ -1,3 +1,5 @@
+const { TYPE_VALIDATE_LOGIN, TYPE_VALIDATE_CREATE_USER, TYPE_VALIDATE_ADDRESS } = require("./enum/validate");
+
 const objValidateFields = {
   name: {
     exist: true,
@@ -11,32 +13,61 @@ const objValidateFields = {
     exist: true,
     size: { min: 3, max: 30 },
   },
+  street: {
+    exist: true,
+  },
+  city: {
+    exist: true,
+  },
+  cep: {
+    exist: true,
+    regex: /^\d{5}-\d{3}$/,
+  },
+  numberStreet: {
+    exist: true,
+    regex: /\d+/,
+  }
 }
 
-exports.verifyFields = (fields) => {
-  const arrayOfFields = Object.keys(fields);
-  arrayOfFields.forEach((field) => validateField({ field, valueField: fields[field] }))
+const validateLogin = ['email', 'password'];
+const validateUser = ['email', 'password', 'name'];
+const validateAddress = ['numberStreet', 'cep', 'city', 'street'];
+
+const invalidFieldError = () => {
+  const newError = new Error();
+  newError.name = 'invalidField';
+  throw newError;
+}
+
+exports.verifyFields = (fields, type) => {
+  const objValidate = {
+    [`${TYPE_VALIDATE_LOGIN}`]: () => verifyArray(validateLogin, fields),
+    [`${TYPE_VALIDATE_CREATE_USER}`]: () => verifyArray(validateUser, fields),
+    [`${TYPE_VALIDATE_ADDRESS}`]: () => verifyArray(validateAddress, fields.address),
+  }
+  objValidate[type]();
+}
+
+const verifyArray = (arr, fields) => {
+  arr.forEach((field) => validateField({ field, valueField: fields[field] }));
 }
 
 const validateField = ({ field, valueField }) => {
   const { exist, size, regex } = objValidateFields[field];
-  validateIsExist(exist, valueField);
-  validadeSize(size, valueField);
-  validateRegex(regex, valueField);
+
+  if (exist) validateIsExist(valueField);
+  if (size) validadeSize(size, valueField);
+  if (regex) validateRegex(regex, valueField);
 }
 
 const validadeSize = (size, value) => {
-  if (!size) return;
   const { min, max } = size;
-  if (value.length < min || value.length > max) throw new Error('invalidField');
+  if (value.length < min || value.length > max) invalidFieldError();
 }
 
-const validateIsExist = (exist, value) => {
-  if (!exist) return;
-  if (!value) throw new Error('invalidField');
+const validateIsExist = (value) => {
+  if (!value) invalidFieldError();
 }
-
 const validateRegex = (regex, value) => {
-  if (regex) return
-  if (!re.test(String(value).toLowerCase())) throw new Error('invalidField');
+  if (!regex.test(String(value).toLowerCase())) invalidFieldError();
 }
