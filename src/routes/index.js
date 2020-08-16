@@ -4,6 +4,8 @@ const routes = {
   login: '/login',
   payment: '/cart',
   nature: '/nature',
+  combo: '/combo',
+  customize: '/combo/customize',
 };
 
 const endpoints = {};
