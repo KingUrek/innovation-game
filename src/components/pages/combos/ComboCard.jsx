@@ -5,7 +5,7 @@ import placeholder from './static/placeholderImage.png';
 import style from './style.module.css';
 import routes from '../../../routes';
 
-export default function ComboCard() {
+export default function ComboCard({ name, schedule, products, description, price, noPromotional }) {
   return (
     <div className={style['combo-container']}>
       <div>
@@ -14,10 +14,10 @@ export default function ComboCard() {
       </div>
       <div>
 
-        <p className={style.title}>Combochá plus</p>
+        <p className={style.title}>{name}</p>
         <div className={style['price-container']}>
-          <span className={style['ex-price']}>R$79,90</span>
-          <span className={style.price}>R$59,90</span>
+          {noPromotional && <span className={style['ex-price']}>{`R$${noPromotional}`}</span>}
+          <span className={style.price}>{`R$${price}`}</span>
 
         </div>
         <Link to={routes.customize} className={style['customize-link']}>Customizar</Link>
