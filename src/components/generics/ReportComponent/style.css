@@ -1,0 +1,33 @@
+.ReportComponent {
+  animation: fadeIn 3s;
+  position: fixed;
+  top: 60px;
+  text-align:center;
+  padding-bottom: 10px;
+  width: 300px;
+  height: 40px;
+  background: red;
+  border: 2px white solid;
+  border-radius: 20px;
+  color: white;
+}
+
+@keyframes fadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}

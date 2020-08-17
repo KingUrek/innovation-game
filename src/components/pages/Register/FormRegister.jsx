@@ -1,10 +1,19 @@
 import React, { useState, useContext } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Inputs from '../../generics/Inputs';
 import { SiteContext } from '../../../context';
 import { fetchApi, saveToken } from '../../../services';
 import ButtonCheckout from '../../generics/ButtonCheckout/index';
 import ReportComponent from '../../generics/ReportComponent/index';
+
+const objName = {
+  label: null,
+  type: "text",
+  placeholder: "Digite o seu Nome",
+  required: true,
+  minLength: 3,
+  name: "iptName",
+}
 
 const objEmail = {
   label: null,
@@ -23,16 +32,16 @@ const objPassword = {
   minLength: 6,
 }
 
-async function userLogin(event, setStatus, setUser) {
+async function userRegister(event, setStatus, setUser) {
   event.preventDefault();
-  const { iptEmail, iptPassword } = event.target;
+  const { iptName, iptEmail, iptPassword } = event.target;
   const body = {
+    name: iptName.value,
     email: iptEmail.value,
     password: iptPassword.value,
   };
-  console.log(body)
   const data = await fetchApi({
-    endpoint: 'http://localhost:3001/user/login',
+    endpoint: 'http://localhost:3001/user/create',
     method: 'POST',
     body,
   });
@@ -45,20 +54,19 @@ async function userLogin(event, setStatus, setUser) {
   if (!data.success) return setStatus({ error: true, success: false, message: data.message });
 }
 
-export default function FormLogin() {
+export default function FormRegister() {
   const { user, setUser } = useContext(SiteContext);
   const [status, setStatus] = useState({ error: false, success: false, message: '' });
   return (
     <div className="Main-Form">
-      <h2>Login</h2>
-      {!status.message || <ReportComponent message={{ status, setStatus }} page="Login" />}
+      <h2>Cadastro</h2>
+      {!status.message || <ReportComponent message={{ status, setStatus }} page="Register" />}
       {!user ?
-        <form className="Form" onSubmit={(e) => userLogin(e, setStatus, setUser)}>
-          {[objEmail, objPassword].map((inputs) => (
+        <form className="Form" onSubmit={(e) => userRegister(e, setStatus, setUser)}>
+          {[objName, objEmail, objPassword].map((inputs) => (
             <Inputs att={inputs} />
           ))}
           <input type="submit" value="Enviar" />
-          <Link className="link-login" to="/Register">Criar nova conta</Link>
         </form>
         : <div className="nav-login">
           <Link className="link-login" to="/">Pagina Inicial</Link>

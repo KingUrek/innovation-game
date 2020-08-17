@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { SiteContext } from '../../context';
-import { clearToken } from '../../services';
+import { SiteContext } from '../../../context';
+import { clearToken } from '../../../services';
 import './style.css';
 
 export default function ButtonCheckout() {
