@@ -3,11 +3,12 @@
   border-radius: 20px;
   font-size: 15px;
   padding: 10px;
+  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
   border: none;
 }
 
 .btn-checkout:hover {
-  background: grey;
+  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
   color:black;
   transform: scale(1.05);
 }

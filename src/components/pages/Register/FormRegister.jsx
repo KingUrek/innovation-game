@@ -32,7 +32,7 @@ const objPassword = {
   minLength: 6,
 }
 
-async function userRegister(event, setStatus, setUser) {
+async function userRegister(event, setStatus, setUser, setIsFetching) {
   event.preventDefault();
   const { iptName, iptEmail, iptPassword } = event.target;
   const body = {
@@ -40,12 +40,13 @@ async function userRegister(event, setStatus, setUser) {
     email: iptEmail.value,
     password: iptPassword.value,
   };
+  setIsFetching(true)
   const data = await fetchApi({
     endpoint: 'http://localhost:3001/user/create',
     method: 'POST',
     body,
   });
-  console.log(data, 'data');
+  setIsFetching(false)
   if (data.success) {
     setUser({ email: data.data.email, name: data.data.name })
     saveToken(data.data.token)
@@ -57,16 +58,18 @@ async function userRegister(event, setStatus, setUser) {
 export default function FormRegister() {
   const { user, setUser } = useContext(SiteContext);
   const [status, setStatus] = useState({ error: false, success: false, message: '' });
+  const [isFetching, setIsFetching] = useState(false);
   return (
     <div className="Main-Form">
       <h2>Cadastro</h2>
       {!status.message || <ReportComponent message={{ status, setStatus }} page="Register" />}
       {!user ?
-        <form className="Form" onSubmit={(e) => userRegister(e, setStatus, setUser)}>
+        <form className="Form" onSubmit={(e) => userRegister(e, setStatus, setUser, setIsFetching)}>
           {[objName, objEmail, objPassword].map((inputs) => (
             <Inputs att={inputs} />
           ))}
-          <input type="submit" value="Enviar" />
+          <input className="btn-submit" type="submit" disabled={isFetching} value={isFetching ? 'Carregando' : 'Criar'} />
+          <Link className="link-login" to="/Login">Já possuo conta!</Link>
         </form>
         : <div className="nav-login">
           <Link className="link-login" to="/">Pagina Inicial</Link>
