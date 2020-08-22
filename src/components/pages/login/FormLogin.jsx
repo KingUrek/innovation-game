@@ -1,27 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Inputs from '../../generics/Inputs';
 import { SiteContext } from '../../../context';
 import { fetchApi, saveToken } from '../../../services';
-import ButtonCheckout from '../../generics/ButtonCheckout/index';
-import ReportComponent from '../../generics/ReportComponent/index';
-
-const objEmail = {
-  label: null,
-  type: "email",
-  placeholder: "Digite o seu Email",
-  required: true,
-  name: "iptEmail",
-}
-
-const objPassword = {
-  label: null,
-  type: "password",
-  placeholder: "Digite sua senha",
-  required: true,
-  name: "iptPassword",
-  minLength: 6,
-}
+import ReportComponent from '../../generics/ReportComponent';
+import TreeOfLinks from '../../generics/TreeOfLinks';
+import { objEmail, objPassword } from './utils/inputs';
 
 async function userLogin(event, setStatus, setUser, setIsFetching) {
   event.preventDefault();
@@ -52,20 +36,16 @@ export default function FormLogin() {
   return (
     <div className="Main-Form">
       <h2>Login</h2>
-      {!status.message || <ReportComponent message={{ status, setStatus }} page="Login" />}
+      {status.message ? <ReportComponent message={{ status, setStatus }} page="Login" /> : null}
       {!user ?
         <form className="Form" onSubmit={(e) => userLogin(e, setStatus, setUser, setIsFetching)}>
           {[objEmail, objPassword].map((inputs) => (
             <Inputs att={inputs} />
           ))}
           <input className="btn-submit" type="submit" disabled={isFetching} value={isFetching ? 'Carregando' : 'Entrar'} />
-          <Link className="link-login" to="/Register">Criar nova conta</Link>
+          <Link className="link-redirect" to="/Register">Criar nova conta</Link>
         </form>
-        : <div className="nav-login">
-          <Link className="link-login" to="/">Pagina Inicial</Link>
-          <Link className="link-login" to="/Perfil">Perfil</Link>
-          <ButtonCheckout />
-        </div>
+        : <TreeOfLinks />
       }
     </div>
   );

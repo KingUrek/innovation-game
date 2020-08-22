@@ -3,34 +3,9 @@ import { Link } from 'react-router-dom';
 import Inputs from '../../generics/Inputs';
 import { SiteContext } from '../../../context';
 import { fetchApi, saveToken } from '../../../services';
-import ButtonCheckout from '../../generics/ButtonCheckout/index';
 import ReportComponent from '../../generics/ReportComponent/index';
-
-const objName = {
-  label: null,
-  type: "text",
-  placeholder: "Digite o seu Nome",
-  required: true,
-  minLength: 3,
-  name: "iptName",
-}
-
-const objEmail = {
-  label: null,
-  type: "email",
-  placeholder: "Digite o seu Email",
-  required: true,
-  name: "iptEmail",
-}
-
-const objPassword = {
-  label: null,
-  type: "password",
-  placeholder: "Digite sua senha",
-  required: true,
-  name: "iptPassword",
-  minLength: 6,
-}
+import TreeOfLinks from '../../generics/TreeOfLinks';
+import { objEmail, objName, objPassword } from './utils/inputs'
 
 async function userRegister(event, setStatus, setUser, setIsFetching) {
   event.preventDefault();
@@ -69,13 +44,9 @@ export default function FormRegister() {
             <Inputs att={inputs} />
           ))}
           <input className="btn-submit" type="submit" disabled={isFetching} value={isFetching ? 'Carregando' : 'Criar'} />
-          <Link className="link-login" to="/Login">Já possuo conta!</Link>
+          <Link className="link-redirect" to="/Login">Já possuo uma conta!</Link>
         </form>
-        : <div className="nav-login">
-          <Link className="link-login" to="/">Pagina Inicial</Link>
-          <Link className="link-login" to="/Perfil">Perfil</Link>
-          <ButtonCheckout />
-        </div>
+        : <TreeOfLinks />
       }
     </div>
   );

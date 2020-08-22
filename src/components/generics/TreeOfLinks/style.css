@@ -1,0 +1,31 @@
+
+.link-login {
+  display: flex;
+  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  color: black;
+  text-decoration: none;
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+.link-login:hover {
+  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  color:black;
+  transform: scale(1.05);
+}
+
+.nav-login {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
