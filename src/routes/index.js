@@ -3,7 +3,8 @@ const routes = {
   nerd: '/nerd',
   login: '/login',
   register: '/register',
-  perfil: '/perfil'
+  perfil: '/perfil',
+  challenge: '/desafio'
 };
 
 const endpoints = {};

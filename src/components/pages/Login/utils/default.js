@@ -1,11 +1,4 @@
-import React, { useContext } from 'react';
-import { SiteContext } from '../../../context';
-import ResumeChallenge from '../../generics/ResumeChallenge.jsx';
-import ResumeCombo from '../../generics/ResumeCombo/index.jsx';
-import './style.css';
-import PerfilImage from '../../generics/PerfilImage/index.jsx';
-
-const challengeDefault = {
+exports.challengeDefault = {
   id: 1,
   name: "Desafio 1",
   description: "Compartilhe para os seus amigos",
@@ -44,17 +37,4 @@ const challengeDefault = {
       done: true,
     },
   ]
-}
-
-export default function Perfil() {
-  // const { user } = useContext(SiteContext)
-  return (
-    <div className="container Perfil">
-      <div className="container-perfil">
-        <PerfilImage />
-        <ResumeCombo />
-        <ResumeChallenge challenge={challengeDefault} />
-      </div>
-    </div>
-  );
 }

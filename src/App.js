@@ -3,15 +3,16 @@ import { Provider } from './context'
 import { Route } from 'react-router-dom';
 import routes from './routes';
 import NerdPage from './components/pages/nerd';
-import LoginPage from './components/pages/login';
+import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Perfil from './components/pages/Perfil';
+import Challenge from './components/pages/Challenge';
 
 function App() {
   return (
     <Provider>
-      <Route path={routes.perfil}>
-        <Perfil />
+      <Route path={routes.desafio}>
+        <Challenge />
       </Route>
     </Provider>
   );

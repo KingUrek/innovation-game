@@ -5,7 +5,7 @@ import {
 
 
 export default function CustomPie({ data, legend }) {
-  const valueWidth = legend ? 250 : 300;
+  const valueWidth = legend ? 250 : 320;
   return (
     <PieChart width={valueWidth} height={210}>
       <Pie
@@ -17,7 +17,10 @@ export default function CustomPie({ data, legend }) {
         dataKey="value"
       >
         {
-          data.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)
+          data.map((entry, index) => {
+            console.log(entry)
+            return <Cell key={`cell-${index}`} fill={entry.name !== 'Restantes' ? entry.color : 'grey'} />
+          })
         }
       </Pie>
     </PieChart>

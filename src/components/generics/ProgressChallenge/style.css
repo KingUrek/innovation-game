@@ -1,0 +1,41 @@
+.ProgressBar {
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  height: 50px;
+  width: 80%;
+  margin: 10px 0 0 20px
+}
+
+.ProgressBar .body-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 10px;
+}
+
+.ProgressBar .progress-bar {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  margin-right: 10px;
+  width: 90%;
+  height: 10px;
+}
+
+.ProgressBar .DescriptionModal {
+  position: relative;
+  background: white;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 8px;
+  top: -80px;
+  color: black;
+}
+
+.DescriptionModal .span-done {
+  color: green;
+  font-size: 20px;
+  margin-left: 30px
+}

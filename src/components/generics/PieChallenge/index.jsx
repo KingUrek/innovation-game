@@ -28,7 +28,7 @@ const createData = (objectives) => {
       {
         name: `Restantes`,
         value: totalPoints - completedPoints,
-        color: COLORS[0],
+        color: 'grey',
         totalPoints,
       }
     );

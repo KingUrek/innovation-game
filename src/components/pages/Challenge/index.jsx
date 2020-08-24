@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
-import { SiteContext } from '../../../context';
-import ResumeChallenge from '../../generics/ResumeChallenge.jsx';
-import ResumeCombo from '../../generics/ResumeCombo/index.jsx';
+import React from 'react';
 import './style.css';
-import PerfilImage from '../../generics/PerfilImage/index.jsx';
+import PieChallenge from '../../generics/PieChallenge/index.jsx';
+import ProgressChallenge from '../../generics/ProgressChallenge';
+import { SiteContext } from '../../../context';
 
 const challengeDefault = {
   id: 1,
@@ -46,14 +45,17 @@ const challengeDefault = {
   ]
 }
 
-export default function Perfil() {
+export default function Challenge() {
   // const { user } = useContext(SiteContext)
+  const { id, name, description, objectives } = challengeDefault
   return (
-    <div className="container Perfil">
-      <div className="container-perfil">
-        <PerfilImage />
-        <ResumeCombo />
-        <ResumeChallenge challenge={challengeDefault} />
+    <div className="container Challenge">
+      <div className="container-challenge">
+        <h1>Desafio do Mês: {name}</h1>
+        <h3>{description}</h3>
+        <h4>Seu Progresso</h4>
+        <PieChallenge objectives={objectives} legend={true}/>
+        <ProgressChallenge objectives={objectives} />
       </div>
     </div>
   );

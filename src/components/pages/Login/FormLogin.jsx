@@ -6,6 +6,7 @@ import { fetchApi, saveToken } from '../../../services';
 import ReportComponent from '../../generics/ReportComponent';
 import TreeOfLinks from '../../generics/TreeOfLinks';
 import { objEmail, objPassword } from './utils/inputs';
+import { defaultChallenge } from './utils/default';
 
 async function userLogin(event, setStatus, setUser, setIsFetching) {
   event.preventDefault();
@@ -22,7 +23,7 @@ async function userLogin(event, setStatus, setUser, setIsFetching) {
   });
   setIsFetching(false);
   if (data.success) {
-    setUser({ email: data.data.email, name: data.data.name })
+    setUser({ email: data.data.email, name: data.data.name, challenge: defaultChallenge })
     saveToken(data.data.token)
     return setStatus({ error: false, success: true, message: 'Sucesso' })
   };

@@ -1,18 +1,14 @@
-.MainRegister {
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
 
-.Main-Form {
+.Main-Form, .MainRegister {
   display: flex;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 20px;
+  color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 600px;
 }
 
 .Form {
@@ -26,7 +22,7 @@
 }
 
 .input-form {
-  width: 300px;
+  width: 80%;
   height: 40px;
   border-radius: 20px;
   background: black;
@@ -51,7 +47,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 80%;
   border-radius: 20px;
   font-size: 15px;
   padding: 10px 0;

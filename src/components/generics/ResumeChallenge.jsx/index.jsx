@@ -3,7 +3,6 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import PieChallenge from '../PieChallenge';
 
-
 const challengeDefault = {
   id: 1,
   name: "Desafio 1",
