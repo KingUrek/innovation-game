@@ -3,6 +3,7 @@ const routes = {
   nerd: '/nerd',
   login: '/login',
   register: '/register',
+  perfil: '/perfil'
 };
 
 const endpoints = {};

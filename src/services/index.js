@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 
 exports.fetchApi = async ({ endpoint, method, body, headers = { 'Content-Type': 'application/json' } }) => {
   if (method === "GET") {

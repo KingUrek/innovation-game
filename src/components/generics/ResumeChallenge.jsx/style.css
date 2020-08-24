@@ -1,0 +1,16 @@
+.ResumeChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ResumeChallenge a {
+  font-size: 20px;
+  color: violet;
+}
+
+.ResumeChallenge a:hover {
+  font-size: 20px;
+  color: yellow;
+}
