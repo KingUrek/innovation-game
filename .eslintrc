@@ -25,6 +25,7 @@
     ],
     "rules": {
         "react/jsx-props-no-spreading":"off",
+        "react/jsx-pascal-case":"off",
         "no-console": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prefer-stateless-function": 0,
