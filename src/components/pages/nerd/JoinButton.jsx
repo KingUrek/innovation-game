@@ -6,7 +6,7 @@ import routes from '../../../routes/index';
 export default function JoinButton() {
   return (
     <Button variant="contained" color="primary" disableElevation>
-      <Link style={{ textDecoration: 'none', color: 'white' }} to={routes.payment}>
+      <Link style={{ textDecoration: 'none', color: 'white' }} to={routes.combo}>
         Junte-se a nós
       </Link>
     </Button>

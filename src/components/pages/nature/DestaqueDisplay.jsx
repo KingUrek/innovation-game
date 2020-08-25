@@ -27,16 +27,16 @@ export default function Destaquedisplay() {
     }
   }
   return (
-    <div className="display-container">
-      <img className="display-image" src={destaques[selected]} alt="" />
-      <IoIosArrowBack className="arrow-back" onClick={previous} />
-      <IoIosArrowForward className="arrow-foward" onClick={next} />
+    <div className={style["display-container"]}>
+      <img className={style["display-image"]} src={destaques[selected]} alt="" />
+      <IoIosArrowBack className={style["arrow-back"]} onClick={previous} />
+      <IoIosArrowForward className={style["arrow-foward"]} onClick={next} />
 
-      <div className="marks-container">
+      <div className={style["marks-container"]}>
         {destaques.map((d, i) => (
           <BsCircleFill
             key={_.uniqueId()}
-            className="display-circle"
+            className={style["display-circle"]}
             size="10px"
             color={i === selected ? 'white' : 'black'}
           />

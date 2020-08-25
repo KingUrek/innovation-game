@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import style from './style.module.css';
 
 export default function Navigator() {
   const [value, setValue] = useState(2);
@@ -10,7 +11,7 @@ export default function Navigator() {
         setValue(newValue);
       }}
       showLabels
-      className="bottom"
+      className={style.bottom}
     >
       <BottomNavigationAction label="Esportes" />
       <BottomNavigationAction label="Nerds" />
