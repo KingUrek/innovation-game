@@ -14,12 +14,7 @@ function App() {
   return (
     <Provider>
       <Route path={routes.desafio}>
-        <Checkout />
-        <Payment />
-        <Challenge />
-        <Perfil />
-        <Register />
-        <Login />
+        <NerdPage />
       </Route>
     </Provider>
   );
