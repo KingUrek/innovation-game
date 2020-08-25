@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { SiteContext } from '../../../context';
-import ResumeChallenge from '../../generics/ResumeChallenge.jsx';
+import ResumeChallenge from '../../generics/ResumeChallenge.jsx/index.jsx';
 import ResumeCombo from '../../generics/ResumeCombo/index.jsx';
 import './style.css';
 import PerfilImage from '../../generics/PerfilImage/index.jsx';
@@ -47,7 +47,7 @@ const challengeDefault = {
   ]
 }
 
-export default function Perfil() {
+export default function Profile() {
   // const { user } = useContext(SiteContext)
   return (
     <div className="container Perfil">

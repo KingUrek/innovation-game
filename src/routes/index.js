@@ -2,14 +2,14 @@ const routes = {
   home: '/home',
   nerd: '/nerd',
   login: '/login',
-  payment: '/cart',
+  payment: '/payment',
   nature: '/nature',
   combo: '/combo',
   customize: '/combo/customize',
   register: '/register',
-  perfil: '/perfil',
-  challenge: '/desafio',
-  checkout: '/finalizar',
+  profile: '/profile',
+  challenge: '/challenge',
+  checkout: '/checkout',
 };
 
 const endpoints = {};
