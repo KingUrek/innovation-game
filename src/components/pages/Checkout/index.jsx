@@ -9,7 +9,7 @@ export default function Checkout(props) {
     <div className="container Checkout">
       <div className="container-checkout">
         <FormCheckout />
-        <NavButton goTo="/pagamento"/>
+        <NavButton goTo="/payment"/>
       </div>
     </div>
   );

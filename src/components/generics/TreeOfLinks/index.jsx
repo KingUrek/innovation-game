@@ -7,7 +7,7 @@ export default function TreeOfLinks() {
   return (
     <div className="nav-login">
       <Link className="link-login" to="/">Pagina Inicial</Link>
-      <Link className="link-login" to="/Perfil">Perfil</Link>
+      <Link className="link-login" to="/profile">Perfil</Link>
       <ButtonCheckout />
     </div>
   );
