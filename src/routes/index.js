@@ -4,7 +4,9 @@ const routes = {
   login: '/login',
   register: '/register',
   perfil: '/perfil',
-  challenge: '/desafio'
+  challenge: '/desafio',
+  checkout: '/finalizar',
+  payment: '/pagamento'
 };
 
 const endpoints = {};

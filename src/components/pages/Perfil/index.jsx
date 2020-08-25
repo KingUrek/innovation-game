@@ -4,6 +4,7 @@ import ResumeChallenge from '../../generics/ResumeChallenge.jsx';
 import ResumeCombo from '../../generics/ResumeCombo/index.jsx';
 import './style.css';
 import PerfilImage from '../../generics/PerfilImage/index.jsx';
+import ButtonCheckout from '../../generics/ButtonCheckout';
 
 const challengeDefault = {
   id: 1,
@@ -54,6 +55,7 @@ export default function Perfil() {
         <PerfilImage />
         <ResumeCombo />
         <ResumeChallenge challenge={challengeDefault} />
+        <ButtonCheckout />
       </div>
     </div>
   );

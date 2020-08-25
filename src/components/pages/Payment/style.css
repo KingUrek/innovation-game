@@ -42,5 +42,15 @@
   border-radius: 4px;
   width: 200px;
   text-align: center;
+  border:none
 }
 
+.btn-form:hover {
+  background: blueviolet;
+  text-decoration: none;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  width: 200px;
+  text-align: center;
+}

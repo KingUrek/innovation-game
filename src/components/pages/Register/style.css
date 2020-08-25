@@ -40,7 +40,7 @@
 
 .link-redirect {
   display: flex;
-  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  background: blueviolet;
   color: black;
   text-decoration: none;
   margin: 5%;
@@ -54,7 +54,7 @@
 }
 
 .link-redirect:hover {
-  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  background: #FFDC61;;
   color:black;
   transform: scale(1.05);
 }
@@ -64,15 +64,11 @@
   font-size: medium;
   padding: 8px 20px;
   border: none;
-  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  background: blueviolet;
 }
 
-.btn-submit:hover {
+.btn-submit:hover,.btn-submit:disabled {
   background: #FFDC61;
   color: black
 }
 
-.btn-submit:disabled {
-  background: #FFDC61;
-  color: black
-}
