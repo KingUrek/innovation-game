@@ -1,0 +1,47 @@
+.ReportComponent {
+  animation: fadeIn 1.3s;
+  position: fixed;
+  top: 60px;
+  text-align:center;
+  padding:10px;
+  width: 290px;
+  height: auto;
+  border: 2px white solid;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+}
+
+.success {
+  background: linear-gradient(226.59deg, #FF0010 10.66%, #FFDC61 93.78%);
+}
+
+.error {
+  background: linear-gradient(226.59deg, #FFDC61 10.66%, #FF0010 93.78%);
+  font-size: 12px;
+}
+
+.btn-close {
+  width: 80px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px;
+  background: #BF34AF;
+  border: none;
+}
+
+.btn-close:hover {
+  background: #BF34AF;
+  color:black;
+}
+
+@keyframes fadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

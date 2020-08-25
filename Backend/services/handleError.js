@@ -1,3 +1,5 @@
+const { ERROR_INVALID_TOKEN, ERROR_NOT_FOUND, ERROR_INVALID_USER } = require("./enum/errors");
+
 const objErrorHandler = {
   invalidField: {
     name: 'invalidField',
@@ -10,14 +12,19 @@ const objErrorHandler = {
     status: 500,
   },
   NotFound: {
-    name: 'NotFound',
+    name: ERROR_NOT_FOUND,
     detail: 'Item não foi encontrado',
     status: 404,
   },
   InvalidToken: {
-    name: 'InvalidToken',
+    name: ERROR_INVALID_TOKEN,
     detail: 'Token não é valido',
     status: 401,
+  },
+  invalidUser: {
+    name: ERROR_INVALID_USER,
+    detail: 'Dados incorretos',
+    status: 400,
   }
 }
 

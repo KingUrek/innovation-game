@@ -1,0 +1,21 @@
+.btn-checkout {
+  color: white;
+  width: 300px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px;
+  background: blueviolet;
+  border: none;
+}
+
+.btn-checkout:hover {
+  background: #FFDC61;
+  color:black;
+}
+
+.ButtonCheckout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
