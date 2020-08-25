@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Inputs({ att: { label, name, type, regex, required, value, clsName="input-form", placeholder, title, minLength } }) {
+export default function Inputs({ att: { label, name, type, regex, required, value,maxLength, clsName="input-form", placeholder, title, minLength } }) {
   return (
     <>
       {label ? <label htmlFor={name}>{label}</label> : null}
@@ -15,6 +15,7 @@ export default function Inputs({ att: { label, name, type, regex, required, valu
         name={name}
         title={title}
         minLength={minLength}
+        maxLength={maxLength}
       />
     </>
   );

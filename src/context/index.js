@@ -5,10 +5,13 @@ const SiteContext = createContext();
 
 const SiteProvider = ({ children }) => {
   const [user, setUser] = useState();
+  const [formPayment, setFormPayment] = useState();
 
   const context = {
     user,
     setUser,
+    formPayment,
+    setFormPayment
   };
 
   return (

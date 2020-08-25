@@ -15,13 +15,13 @@ async function userRegister(event, setStatus, setUser, setIsFetching) {
     email: iptEmail.value,
     password: iptPassword.value,
   };
-  setIsFetching(true)
+  setIsFetching(true);
   const data = await fetchApi({
     endpoint: 'http://localhost:3001/user/create',
     method: 'POST',
     body,
   });
-  setIsFetching(false)
+  setIsFetching(false);
   if (data.success) {
     setUser({ email: data.data.email, name: data.data.name })
     saveToken(data.data.token)

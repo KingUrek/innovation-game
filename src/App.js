@@ -7,12 +7,13 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Perfil from './components/pages/Perfil';
 import Challenge from './components/pages/Challenge';
+import Payment from './components/pages/Payment';
 
 function App() {
   return (
     <Provider>
       <Route path={routes.desafio}>
-        <Challenge />
+        <Payment />
       </Route>
     </Provider>
   );
