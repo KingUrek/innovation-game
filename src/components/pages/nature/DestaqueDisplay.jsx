@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { BsCircleFill } from 'react-icons/bs';
+import style from './style.module.css';
 
 const _ = require('lodash');
 
