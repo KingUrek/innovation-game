@@ -13,45 +13,48 @@ import Checkout from './components/pages/Checkout';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Challenge from './components/pages/Challenge';
+import {Provider} from './context';
 
 function App() {
   return (
     <>
-      <Switch>
-        <Route exact path="/">
-          <NerdPage />
-        </Route>
-        <Route path={routes.nerd}>
-          <NerdPage />
-        </Route>
-        <Route path={routes.nature}>
-          <NaturePage />
-        </Route>
-        <Route path={routes.customize}>
-          <CustomizationPage />
-        </Route>
-        <Route path={routes.login}>
-          <Login />
-        </Route>
-        <Route path={routes.register}>
-          <Register />
-        </Route>
-        <Route path={routes.profile}>
-          <Profile />
-        </Route>
-        <Route path={routes.challenge}>
-          <Challenge />
-        </Route>
-        <Route path={routes.payment}>
-          <Payment />
-        </Route>
-        <Route path={routes.combo}>
-          <CombosPage />
-        </Route>
-        <Route path={routes.checkout}>
-          <Checkout />
-        </Route>
-      </Switch>
+      <Provider>
+        <Switch>
+          <Route exact path="/">
+            <NerdPage />
+          </Route>
+          <Route path={routes.nerd}>
+            <NerdPage />
+          </Route>
+          <Route path={routes.nature}>
+            <NaturePage />
+          </Route>
+          <Route path={routes.customize}>
+            <CustomizationPage />
+          </Route>
+          <Route path={routes.login}>
+            <Login />
+          </Route>
+          <Route path={routes.register}>
+            <Register />
+          </Route>
+          <Route path={routes.profile}>
+            <Profile />
+          </Route>
+          <Route path={routes.challenge}>
+            <Challenge />
+          </Route>
+          <Route path={routes.payment}>
+            <Payment />
+          </Route>
+          <Route path={routes.combo}>
+            <CombosPage />
+          </Route>
+          <Route path={routes.checkout}>
+            <Checkout />
+          </Route>
+        </Switch>
+      </Provider>
     </>
   );
 }
