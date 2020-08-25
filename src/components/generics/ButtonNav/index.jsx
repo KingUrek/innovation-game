@@ -4,7 +4,7 @@ import "./style.css";
 
 
 export default function NavButton({ goTo }) {
-  let history = useHistory();
+  const history = useHistory();
   console.log(history)
   return (
     <>
