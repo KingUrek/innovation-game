@@ -8,12 +8,14 @@ import Register from './components/pages/Register';
 import Perfil from './components/pages/Perfil';
 import Challenge from './components/pages/Challenge';
 import Payment from './components/pages/Payment';
+import Checkout from './components/pages/Checkout';
 
 function App() {
   return (
     <Provider>
       <Route path={routes.desafio}>
         <Payment />
+        <Checkout />
       </Route>
     </Provider>
   );

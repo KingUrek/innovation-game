@@ -1,4 +1,4 @@
-.Payment {
+.Checkout {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.container-payment {
+.container-checkout {
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -19,28 +19,13 @@
   color: white;
 }
 
-.FormPayment {
+.FormCheckout {
   display: flex;
-  height: 100%;
+  height: 90%;
   flex-direction: column;
   align-items: center;
-}
-
-.Form {
-  display: flex;
-  height: 80%;
 }
 
 .form-control {
   background: white;
 }
-
-.btn-form {
-  background: white;
-  text-decoration: none;
-  padding: 4px;
-  border-radius: 4px;
-  width: 200px;
-  text-align: center;
-}
-
