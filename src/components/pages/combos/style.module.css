@@ -1,0 +1,131 @@
+.container {
+  background-image: url('./static/Background.svg');
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  border-radius: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Display Container */
+
+.display-container {
+  margin-top: 17px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+}
+
+img,
+p {
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.display-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.display-circle {
+  margin-right: 8px;
+}
+
+.marks-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-back {
+  position: absolute;
+  bottom: 50%;
+  cursor: pointer;
+}
+
+.arrow-foward {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  cursor: pointer;
+}
+/* ***********************************8 */
+/* Combo Card */
+.combo-container {
+  position: relative;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  margin: 10px 0px;
+}
+
+.image {
+  padding: 7px 23px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 23px;
+  margin-block-start: 7px;
+  margin-block-end: 0;
+  line-height: 27px;
+  cursor: pointer;
+}
+
+.price {
+  margin-block-start: 0;
+}
+
+.ex-price {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-right: 20px;
+  text-decoration: line-through;
+  color: rgb(93, 29, 29);
+}
+
+.price-container {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.arrow-icon {
+  position: absolute;
+  bottom: 0;
+  transform: scale(1.5);
+  left: 50%;
+  cursor: pointer;
+}
+
+.customize-link {
+  margin-block-start: 0;
+  text-decoration: none;
+  font-size: 16px;
+}
+/*  */
+
+.page-title {
+  text-align: center;
+  font-size: 49.7143px;
+  line-height: 58px;
+
+  color: #000000;
+}
+
+.display-title {
+  margin-left: 20px;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #000000;
+}

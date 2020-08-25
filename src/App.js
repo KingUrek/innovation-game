@@ -1,23 +1,31 @@
 import React from 'react';
-import { Provider } from './context'
-import { Route } from 'react-router-dom';
+
+import { Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import NerdPage from './components/pages/nerd';
-import Login from './components/pages/Login';
-import Register from './components/pages/Register';
-import Perfil from './components/pages/Perfil';
-import Challenge from './components/pages/Challenge';
-import Payment from './components/pages/Payment';
-import Checkout from './components/pages/Checkout';
+import NaturePage from './components/pages/nature';
+import CombosPage from './components/pages/combos';
+import './App.css';
+import CustomizationPage from './components/pages/customization';
 
 function App() {
   return (
-    <Provider>
-      <Route path={routes.desafio}>
-        <NerdPage />
-      </Route>
-    </Provider>
-  );
-}
+    <>
+      <Switch>
+        <Route path={routes.nerd}>
+          <NerdPage />
+        </Route>
+        <Route path={routes.nature}>
+          <NaturePage />
+        </Route>
+        <Route path={routes.customize}>
+          <CustomizationPage />
+        </Route>
+        <Route path={routes.combo}>
+          <CombosPage />
+        </Route>
+      </Switch>
+    </>
+
 
 export default App;

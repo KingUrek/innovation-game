@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
+import './style.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import style from './style.module.css';
 import Navigator from './Navigator';
 import Destaquedisplay from './DestaqueDisplay';
 import JoinButton from './JoinButton';
 
-export default function NerdPage() {
+export default function NaturePage() {
   return (
-    <div className={style.container}>
-      <GiHamburgerMenu className={style['menu-icon']} />
+    <div className="container">
+      <GiHamburgerMenu className="menu-icon" />
       <Navigator />
       <Destaquedisplay />
-      <p className={style['quest-call']}>Primary Quest!</p>
-      <div className={style['join-button']}>
+      <p className="quest-call">Desafio Namastê!</p>
+      <div className="join-button">
         <JoinButton />
       </div>
     </div>
