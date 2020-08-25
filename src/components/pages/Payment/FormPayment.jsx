@@ -30,7 +30,7 @@ export default function FormPayment() {
           pattern="\d\d/\d\d"
           required
         />
-        <label for="number">Número do Crtão (16 dígitos)</label>
+        <label for="number">Número do Cartão (16 dígitos)</label>
         <input id="number" type="text" placeholder="Número do cartão" class="form-control" required name="number" minlength="13" maxlength="16" />
         <label for="cvc">cvc</label>
         <input id="cvc" type="text" placeholder="CVC" class="form-control" required name="cvc" minlength="3" maxlength="4" />
