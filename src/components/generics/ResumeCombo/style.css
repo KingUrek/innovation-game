@@ -1,0 +1,15 @@
+.ResumeCombo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ResumeCombo a {
+  font-size: 20px;
+  color: violet;
+}
+
+.ResumeCombo a:hover {
+  font-size: 20px;
+  color: yellow;
+}

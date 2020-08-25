@@ -1,0 +1,21 @@
+.Perfil {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-perfil {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 20px;
+  width: 320px;
+  height: 520px;
+  background: rgba(0, 0, 0, 0.62);
+  color: white;
+  margin-top: 75px;
+}
+

@@ -1,0 +1,14 @@
+.container {
+  background-image: url("./static/NerdBackground.svg");
+  width: 100%;
+  border-radius: inherit;
+  
+}
+
+.bottom {
+  margin-top: 32px;
+}
+
+.MuiBottomNavigationAction-root{
+  background-color: red;
+}
