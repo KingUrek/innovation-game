@@ -13,3 +13,14 @@ exports.createUser = async (req, res, next) => {
     next(err);
   }
 };
+
+async function saveAvatar(req, res, next) {
+  try {
+    await User.saveAvatar({ id: req.body.id, avatar: req.file.location });
+    res.status(201).send(req.file.location);
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports.saveAvatar = saveAvatar;
