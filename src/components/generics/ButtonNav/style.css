@@ -1,0 +1,21 @@
+.NavButton {
+  position: fixed;
+  top: 100px;
+  margin-left: 30px;
+  text-decoration: none;
+  background: white;
+  color: blue;
+  padding: 4px 5px;
+  border-radius: 100%;
+  text-align: center;
+  border:none
+}
+
+.NavButton:hover {
+  background: blue;
+  color: white;
+}
+
+.NavButton:focus {
+  outline: none;
+}

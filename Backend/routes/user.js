@@ -7,7 +7,7 @@ const validateToken = require('../middlewares/validateToken');
 
 const router = express.Router();
 
-router.get('/login', validateFields(TYPE_VALIDATE_LOGIN), loginUser);
+router.post('/login', validateFields(TYPE_VALIDATE_LOGIN), loginUser);
 router.post('/create', validateFields(TYPE_VALIDATE_CREATE_USER), createUser);
 router.post('/subscribe', validateToken, validateFields(TYPE_VALIDATE_ADDRESS), addSubscribe);
 

@@ -1,0 +1,30 @@
+
+.link-login {
+  display: flex;
+  background: blueviolet;
+  color: white;
+  text-decoration: none;
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+.link-login:hover {
+  background: #FFDC61;
+  color:black;
+}
+
+.nav-login {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

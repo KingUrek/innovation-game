@@ -1,0 +1,130 @@
+.container {
+  background-image: url("./static/Background.svg");
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  border-radius: inherit;
+}
+
+/* ComboDisplay */
+.combo-display {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 90%;
+  height: 200px;
+  border-radius: 10px;
+  margin-left: 18px;
+  margin-top: 10px;
+  position: relative;
+  overflow-y: scroll;
+}
+
+/* ****************** */
+/* QtyDisplay */
+.qty-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.qty-input {
+  height: 1em;
+  text-align: center;
+  width: 30px;
+  margin: 0 5px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.title-container {
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-container {
+  margin-left: 10px;
+  display: flex;
+  padding-top: 10px;
+}
+
+.delete-item {
+  color: rgb(182, 30, 30);
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.value {
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  left: 80%;
+}
+
+.navigator {
+  margin-top: 19px;
+  font-size: 12px;
+  display: flex;
+  background-color: white;
+  overflow: scroll;
+}
+
+.navigator-button {
+  font-size: 12.2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 3px 6px;
+}
+
+.navigator-button:hover {
+  background-color: thistle;
+}
+
+/*  */
+
+.item-card-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+.item-card-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.item-card-title {
+  color: white;
+  font-size: 16px;
+}
+
+.price {
+  display: block;
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+margin-top: 10px;
+}
+
+.total-container {
+  color:white;
+  margin-left:10px;
+  margin-top:10px
+}

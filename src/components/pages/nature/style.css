@@ -1,0 +1,88 @@
+.container {
+  position: relative;
+  background-image: url("./static/Background.svg");
+  width: 100%;
+  border-radius: inherit;
+}
+
+.bottom {
+  margin-top: 32px;
+}
+
+.MuiBottomNavigationAction-root {
+  background-color: red;
+}
+
+/* Display Container */
+
+.display-container {
+  margin-top: 17px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+
+}
+
+img,p {
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.display-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.display-circle {
+  margin-right: 8px;
+}
+
+.marks-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-back {
+  position: absolute;
+  bottom: 50%;
+  cursor: pointer;
+}
+
+.arrow-foward {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  cursor: pointer;
+}
+/* ***********************************8 */
+
+.quest-call {
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.join-button{
+  position:absolute !important;
+  bottom: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.menu-icon{
+  position: absolute;
+  right: 16px;
+  top:10px;
+  transform:scale(1.5);
+  cursor:pointer;
+}
