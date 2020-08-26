@@ -43,7 +43,7 @@ export default function FormPayment() {
         />
         <input type="submit" className="btn-form" value={!formPayment?"Confirmar":"Atualizar"} />
       </form>
-      {formPayment ? <Link className="btn-form" to="/finalizar">Finalizar compra</Link> : null}
+      {formPayment ? <Link className="btn-form" to="/checkout">Finalizar compra</Link> : null}
     </div>
   );
 }
