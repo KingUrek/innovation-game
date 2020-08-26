@@ -11,3 +11,10 @@ height: 640px;
 width: 360px;
 
 }
+
+.container {
+  position: relative;
+  background-image: url("./static/NerdBackground.svg");
+  width: 100%;
+  border-radius: inherit;
+}
