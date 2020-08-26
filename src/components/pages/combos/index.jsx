@@ -3,6 +3,7 @@ import style from './style.module.css';
 import Destaquedisplay from './DestaqueDisplay';
 import ComboCard from './ComboCard';
 import sequelizer from '../../../utils/sequelize';
+import {CircularProgress} from '@material-ui/core'
 
 export default function CombosPage() {
   const [combos, setCombos] = useState([]);
@@ -20,7 +21,8 @@ export default function CombosPage() {
       <p className={style['page-title']}>Combos</p>
       <p className={style['display-title']}>Destaques</p>
       <Destaquedisplay />
-      {combos.map((props) => <ComboCard {...props} />)}
+      
+      {!combos.length? <CircularProgress size={60} className={style.loading}/> : combos.map((props) => <ComboCard {...props} />)}
 
     </div>
   );

@@ -13,11 +13,14 @@ import Checkout from './components/pages/Checkout';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Challenge from './components/pages/Challenge';
+import {Provider} from './context'
 
 function App() {
   return (
     <>
+        <Provider>
       <Switch>
+
         <Route exact path="/">
           <NerdPage />
         </Route>
@@ -52,6 +55,7 @@ function App() {
           <Checkout />
         </Route>
       </Switch>
+        </Provider>
     </>
   );
 }

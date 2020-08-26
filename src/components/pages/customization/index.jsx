@@ -4,6 +4,8 @@ import Combodisplay from './ComboDisplay';
 import Navigator from './Navigator';
 import ItemsContainer from './ItemsContainer';
 import ComboContext from './utils/context';
+import { Link } from 'react-router-dom';
+import routes from '../../../routes'
 
 export default function CustomizationPage() {
   const [combo, changeCombo] = useState(JSON.parse(localStorage.getItem('combo')) || []);
@@ -16,8 +18,15 @@ export default function CustomizationPage() {
   return (
     <div className={style.container}>
       <ComboContext.Provider value={{ combo, setCombo, category, setCategory }}>
-        <h1>Customize Seu Combo</h1>
+        <h1 style={{marginLeft:19}}>Customize Seu Combo</h1>
+
+        <div style={{position:"relative",marginLeft:19}}>
         <span>Seu Combo Atual</span>
+        <Link to={routes.payment}>
+        <button className={style['finish-combo']}>Finalizar Combo</button>
+        </Link>
+        </div>
+
         <Combodisplay combo={combo} setCombo={setCombo} />
         <Navigator />
         <ItemsContainer />
