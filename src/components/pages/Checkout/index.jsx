@@ -2,15 +2,15 @@ import React from 'react';
 import './style.css';
 import FormCheckout from './FormCheckout';
 import NavButton from '../../generics/ButtonNav';
+import NavCheckout from '../../generics/NavCheckout';
 
-export default function Checkout(props) {
-  console.log(props)
+export default function Checkout() {
   return (
     <div className="container Checkout">
       <div className="container-checkout">
         <FormCheckout />
-        <NavButton goTo="/payment"/>
       </div>
+      <NavCheckout />
     </div>
   );
 }

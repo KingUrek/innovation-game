@@ -33,7 +33,6 @@ export default function ComboCard({ name, schedule, products, description, price
         <div className={style['price-container']}>
           {noPromotional && <span className={style['ex-price']}>{`R$${noPromotional}`}</span>}
           <span className={style.price}>{`R$${price}`}</span>
-
         </div>
         <span onClick={customizeCombo} className={style['customize-link']}>Customizar</span>
         {open && <div style={{marginBottom:30}}>

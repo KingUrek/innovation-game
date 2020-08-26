@@ -13,7 +13,9 @@ import Checkout from './components/pages/Checkout';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Challenge from './components/pages/Challenge';
-import {Provider} from './context'
+import Review from './components/pages/Review';
+import { Provider } from './context';
+
 
 function App() {
   return (
@@ -52,6 +54,9 @@ function App() {
           </Route>
           <Route path={routes.checkout}>
             <Checkout />
+          </Route>
+          <Route path={routes.review}>
+            <Review />
           </Route>
         </Switch>
       </Provider>

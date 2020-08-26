@@ -21,9 +21,7 @@ export default function CombosPage() {
       <p className={style['page-title']}>Combos</p>
       <p className={style['display-title']}>Destaques</p>
       <Destaquedisplay />
-      
       {!combos.length? <CircularProgress size={60} className={style.loading}/> : combos.map((props) => <ComboCard {...props} />)}
-
     </div>
   );
 }

@@ -1,0 +1,63 @@
+.NavBarButton {
+  position: fixed;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  top: 650px;
+  width: 360px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: blueviolet;
+}
+
+.NavBarButton a:nth-child(1) {
+  border-bottom-left-radius: 20px;
+}
+.NavBarButton a:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+.NavBarButton .link-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  text-decoration: none;
+  height: auto;
+}
+
+.logoff {
+  width: 50%;
+}
+
+.logon {
+  width: 33%;
+}
+
+.fetching {
+  width: 98%;
+}
+
+.link-nerd {
+  background: white;
+  border: 1px solid blueviolet;
+  color: blueviolet;
+}
+
+
+.link-nerd:hover {
+  background: blueviolet;
+  color: white;
+}
+
+.link-nature  {
+  background: white;
+  border: 1px solid green;
+  color: green;
+}
+
+.link-nature:hover  {
+  background: green;
+  color: white;
+}

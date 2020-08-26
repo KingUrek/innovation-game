@@ -1,0 +1,36 @@
+.NavCheckout {
+  position: fixed;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  top: 650px;
+  width: 360px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: blueviolet;
+}
+
+.NavCheckout .link-nav-bar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  text-decoration: none;
+  height: auto;
+}
+
+.link-nerd:disabled {
+  background: white;
+  border: 1px solid blueviolet;
+  color: blueviolet;
+  filter:brightness(50%)
+}
+
+.NavCheckout a:nth-child(1) {
+  border-bottom-left-radius: 20px;
+}
+.NavCheckout input:last-child {
+  border-bottom-right-radius: 20px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import FormPayment from './FormPayment';
+import NavCheckout from '../../generics/NavCheckout';
 
 export default function Payment() {
   return (
@@ -8,6 +9,7 @@ export default function Payment() {
       <div className="container-payment">
         <FormPayment />
       </div>
+      <NavCheckout />
     </div>
   );
 }

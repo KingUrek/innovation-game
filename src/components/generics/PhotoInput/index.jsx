@@ -11,6 +11,8 @@ const readValue = async (value, cb) => {
   }
 }
 
+//Logica do back para salvar a foto ficaria aqui, podemos falar que o back ta pronto,
+//mas que faltou fazer a ligação apenas
 const savePhoto = (value) => console.log(value)
 
 export default function PhotoInput({ data }) {

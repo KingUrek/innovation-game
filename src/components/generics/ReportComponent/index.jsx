@@ -3,7 +3,6 @@ import './style.css';
 
 function ReportComponent({ message, page }) {
   const { status: { success, error }, setStatus } = message;
-  console.log(message, 'redirect')
   setTimeout(() => {
     setStatus({ error: false, success: false, message: '' });
   }, 4000);
