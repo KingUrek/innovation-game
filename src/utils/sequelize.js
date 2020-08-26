@@ -9,11 +9,13 @@ function combo(items) {
     };
 
     if (typeof price === 'string') {
-      sequelizer.price = price;
+      sequelizer.price = +price;
     } else {
-      sequelizer.price = price.price;
+      sequelizer.price = +price.price;
       sequelizer.noPromotional = price.noPromotional;
     }
+
+    products.forEach(product => product.quantity = +product.quantity)
     return sequelizer;
   }
   return items.map(sequelize);

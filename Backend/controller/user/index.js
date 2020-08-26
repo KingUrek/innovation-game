@@ -62,5 +62,17 @@ exports.addSubscribe = async (req, res, next) => {
   }
 };
 
+function verifyToken(req,res){
+  const {token} = req.body
+  try {
+    const info = serviceToken.verifyToken(token)
+    res.status(201).send({data:info})
+  } catch (error) {
+    res.status(401).send({data:"",message:"Token is invalid"})
+  }
+
+}
+
 module.exports.saveAvatar = saveAvatar;
 module.exports.subscribe = subscribe;
+module.exports.verifyToken = verifyToken

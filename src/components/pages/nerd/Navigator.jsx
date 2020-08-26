@@ -8,7 +8,7 @@ const arrNav = [routes.nerd,routes.nerd,routes.nature];
 
 export default function Navigator() {
   const history = useHistory();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
   return (
     <BottomNavigation
       value={value}

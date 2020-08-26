@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import style from './style.module.css';
-import { useHistory } from 'react-router-dom';
 import routes from '../../../routes'
+import { useHistory } from 'react-router-dom';
 
 const arrNav = [routes.nerd,routes.nerd,routes.nature];
 
