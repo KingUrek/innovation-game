@@ -10,7 +10,7 @@ const routes = {
   profile: '/profile',
   challenge: '/challenge',
   checkout: '/checkout',
-  revision: '/revision',
+  review: '/review',
 };
 
 const endpoints = {};

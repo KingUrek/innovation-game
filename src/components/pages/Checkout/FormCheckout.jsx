@@ -3,7 +3,6 @@ import { SiteContext } from '../../../context';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Link } from 'react-router-dom';
 import routes from '../../../routes';
-import ShowCard from '../../generics/ShowCard';
 
 const handleSubmit = (e, cb) => {
   e.preventDefault()
@@ -18,7 +17,7 @@ const handleSubmit = (e, cb) => {
 }
 
 export default function FormCheckout() {
-  const { formPayment, setAddress, address } = useContext(SiteContext)
+  const { setAddress, address } = useContext(SiteContext)
   return (
     <div className="FormCheckout">
       <form className="Form" onSubmit={(e) => handleSubmit(e, setAddress)}>
@@ -41,10 +40,9 @@ export default function FormCheckout() {
         />
         <label for="cep">Cep</label>
         <input id="cep" type="text" placeholder="30310-200" class="form-control" required name="cep" pattern="\d{5}-?\d{3}" />
-        <ShowCard />
         <input type="submit" className="btn-form" value={!address ? "Confirmar" : "Atualizar"} />
       </form>
-      {address ? <Link to={routes.revision} className="btn-form">Revisar Compra</Link> : null}
+      {address ? <Link to={routes.review} className="btn-form">Revisar Compra</Link> : null}
     </div>
   );
 }

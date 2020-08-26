@@ -38,7 +38,7 @@ export default function FormPayment() {
         <ShowCard />
         <input type="submit" className="btn-form" value={!formPayment ? "Confirmar" : "Atualizar"} />
       </form>
-      {formPayment ? <Link className="btn-form" to="/checkout">Finalizar compra</Link> : null}
+      {formPayment ? <Link className="btn-form" to="/checkout">Adicionar o Endereço</Link> : null}
     </div>
   );
 }
