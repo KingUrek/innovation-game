@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import PieChallenge from '../PieChallenge';
+import routes from '../../../routes'
 
 const challengeDefault = {
   id: 1,
@@ -48,7 +49,7 @@ export default function ResumeChallenge({ challenge = challengeDefault }) {
   const { id, name, objectives } = challenge
   return (
     <div className="ResumeChallenge">
-      <h2>Desafio: <Link to={`/challenge`}>{name}</Link></h2>
+      <h2>Desafio: <Link to={routes.challenge}>{name}</Link></h2>
       <PieChallenge objectives={objectives} />
     </div>
   );

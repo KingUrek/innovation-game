@@ -5,7 +5,8 @@ import routes from '../../../routes';
 import './style.css';
 
 export default function NavBarButton({type}) {
-  const { user } = useContext(SiteContext);
+  const { user, fetching } = useContext(SiteContext);
+  if(fetching) return <div className="NavBarButton"><h2 className={`link-nav-bar fetching link-${type}`}>Verificando...</h2></div>
   return (
     <div className="NavBarButton">
       {!user

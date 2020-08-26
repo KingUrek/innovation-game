@@ -6,7 +6,6 @@ function combo(items) {
       schedule,
       products,
       description,
-
     };
 
     if (typeof price === 'string') {

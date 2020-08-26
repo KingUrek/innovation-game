@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Cards from 'react-credit-cards';
 import { SiteContext } from '../../../context';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Link } from 'react-router-dom';
+import ShowCard from '../../generics/ShowCard';
 
 const handleSubmit = (e, cb) => {
   e.preventDefault()
@@ -35,13 +35,8 @@ export default function FormPayment() {
         <input id="number" type="text" placeholder="Número do cartão" class="form-control" required name="number" minlength="13" maxlength="16" />
         <label for="cvc">cvc</label>
         <input id="cvc" type="text" placeholder="CVC" class="form-control" required name="cvc" minlength="3" maxlength="4" />
-        <Cards
-          cvc={formPayment ? formPayment.cvc : ''}
-          expiry={formPayment ? formPayment.expiry : ''}
-          name={formPayment ? formPayment.name : ''}
-          number={formPayment ? formPayment.number : ''}
-        />
-        <input type="submit" className="btn-form" value={!formPayment?"Confirmar":"Atualizar"} />
+        <ShowCard />
+        <input type="submit" className="btn-form" value={!formPayment ? "Confirmar" : "Atualizar"} />
       </form>
       {formPayment ? <Link className="btn-form" to="/checkout">Finalizar compra</Link> : null}
     </div>
