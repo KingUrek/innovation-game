@@ -21,7 +21,6 @@ export default function CombosPage() {
       <p className={style['display-title']}>Destaques</p>
       <Destaquedisplay />
       {combos.map((props) => <ComboCard {...props} />)}
-
     </div>
   );
 }

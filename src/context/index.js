@@ -11,7 +11,7 @@ const SiteProvider = ({ children }) => {
   const [address, setAddress] = useState();
   const [checked, setChecked] = useState(false);
   const [fetching, setFetching] = useState(false);
-  const [messageReturn, setMessageReturn] = useState();
+  const [messageRequest, setMessageRequest] = useState();
 
   const verifyLocalStorage = async () => {
     const { token, combo } = getAllLocal();
@@ -19,6 +19,7 @@ const SiteProvider = ({ children }) => {
     if (combo) setSelectCombo(combo);
     if (token) {
       setFetching(true)
+      //dentro dessa função que fica a logica do verificar o token do usuario
       const dataUser = await requestToken(token);
       setUser(dataUser);
       setFetching(false)
@@ -39,8 +40,8 @@ const SiteProvider = ({ children }) => {
     selectCombo,
     setSelectCombo,
     fetching,
-    setMessageReturn,
-    messageReturn,
+    messageRequest,
+    setMessageRequest,
   };
 
   return (

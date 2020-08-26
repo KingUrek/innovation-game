@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
-import './style.css';
-import routes from '../../../routes';
+import React from 'react';
 import ShowCard from '../../generics/ShowCard';
 import ShowAddress from '../../generics/ShowAddress';
 import ShowCombo from '../../generics/ShowCombo';
-import ButtonCheckout from './ButtonCheckout';
+import ButtonFinnish from './ButtonFinish';
 
 export default function ShowData() {
   return (
     <div>
-      <ShowCard />
+      <ShowCard valid={true} />
       <ShowCombo />
       <ShowAddress />
-      <ButtonCheckout />
+      <ButtonFinnish />
     </div>
   );
 }

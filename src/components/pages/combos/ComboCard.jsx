@@ -18,7 +18,6 @@ export default function ComboCard({ name, schedule, products, description, price
         <div className={style['price-container']}>
           {noPromotional && <span className={style['ex-price']}>{`R$${noPromotional}`}</span>}
           <span className={style.price}>{`R$${price}`}</span>
-
         </div>
         <Link to={routes.customize} className={style['customize-link']}>Customizar</Link>
         <IoIosArrowDown className={style['arrow-icon']} />

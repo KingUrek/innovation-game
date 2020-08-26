@@ -17,13 +17,13 @@ const handleSubmit = (e, cb) => {
 }
 
 export default function FormCheckout() {
-  const { setAddress, address } = useContext(SiteContext)
+  const { setAddress, address, formPayment } = useContext(SiteContext)
   return (
     <div className="FormCheckout">
       <form className="Form" onSubmit={(e) => handleSubmit(e, setAddress)}>
-        <label for="city">Cidade</label>
-        <input id="city" type="text" placeholder="Cidade da entrega" class="form-control" required name="city" />
-        <label for="address">Endereço</label>
+        <label htmlFor="city">Cidade</label>
+        <input id="city" type="text" placeholder="Cidade da entrega" className="form-control" required name="city" />
+        <label htmlFor="address">Endereço</label>
         <input
           type="text"
           name="address"
@@ -31,18 +31,18 @@ export default function FormCheckout() {
           placeholder="Rua Prata, 56"
           required
         />
-        <label for="address2">Complemento</label>
+        <label htmlFor="address2">Complemento</label>
         <input
           type="text"
           name="address2"
           className="form-control"
           placeholder="apt 303"
         />
-        <label for="cep">Cep</label>
-        <input id="cep" type="text" placeholder="30310-200" class="form-control" required name="cep" pattern="\d{5}-?\d{3}" />
+        <label htmlFor="cep">Cep</label>
+        <input id="cep" type="text" placeholder="30310-200" className="form-control" required name="cep" pattern="\d{5}-?\d{3}" />
         <input type="submit" className="btn-form" value={!address ? "Confirmar" : "Atualizar"} />
       </form>
-      {address ? <Link to={routes.review} className="btn-form">Revisar Compra</Link> : null}
+      {address && formPayment ? <Link to={routes.review} className="btn-form">Revisar Compra</Link> : null}
     </div>
   );
 }

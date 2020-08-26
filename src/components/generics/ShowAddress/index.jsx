@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
 import { SiteContext } from '../../../context';
-import 'style.css';
+import { Redirect } from 'react-router-dom';
+import routes from '../../../routes';
 
 export default function ShowAddress() {
   const { address } = useContext(SiteContext)
-  const { addressComplete, city, cep } = address;
+  console.log(address,'ShowAddress')
+  if(!address) return <Redirect to={routes.checkout}/>
   return (
     <div className="ShowAddress">
-      <text>Endereço: {addressComplete}</text>
-      <text>Cidade: {city}</text>
-      <text>Cep: {cep}</text>
+      <h3>Endereço: {address.addressComplete}</h3>
+      <h3>Cidade: {address.city}</h3>
+      <h3>Cep: {address.cep}</h3>
     </div>
   );
 }

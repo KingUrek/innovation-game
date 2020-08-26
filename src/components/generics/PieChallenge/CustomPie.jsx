@@ -18,7 +18,6 @@ export default function CustomPie({ data, legend }) {
       >
         {
           data.map((entry, index) => {
-            console.log(entry)
             return <Cell key={`cell-${index}`} fill={entry.name !== 'Restantes' ? entry.color : 'grey'} />
           })
         }
